@@ -1,22 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import SayHello,{FIRSTNAME, LASTNAME} from './consts';
+import * as colors from './colors'
+import { TwitterPicker } from 'react-color';
+
+console.log("FIRSTNAME", FIRSTNAME);
+console.log("LASTNAME", LASTNAME);
+console.log(colors)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SayHello/>
+        <p style={{color: colors.ERROR}}>My error message</p>
+        <p style={{color: colors.WARNING}}>My warning message</p>
+        <p style={{color: colors.SUCCESS}}>My success message</p>
+        <TwitterPicker/>
       </header>
     </div>
   );
